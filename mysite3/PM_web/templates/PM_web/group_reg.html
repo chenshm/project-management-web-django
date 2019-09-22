@@ -1,0 +1,6 @@
+<form method="post">
+	{% csrf_token %}
+	{{ group_form.as_p }}
+	{{ team_form.as_p }}
+	<button type="submit">Save changes </button>
+</form>

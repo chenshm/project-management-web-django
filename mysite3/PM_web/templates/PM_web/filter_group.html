@@ -1,0 +1,83 @@
+{% extends 'base_generic2.html' %}
+
+{% block style %}
+
+{{ my_form.media}}
+
+  <!-- XDSoft DateTimePicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+
+  <input id="datetimepicker" type="text">
+
+  <script>
+    $(function () {
+      $("#datetimepicker").datetimepicker();
+    });
+  </script>
+
+</body>
+</html>
+
+<script>
+$(document).ready(function(){
+    $("#id_team_information_time_gt").datetimepicker({format:'d/m/Y H:i',});
+
+    $("#id_team_information_time_lt").datetimepicker({format:'d/m/Y H:i',});
+});
+</script>
+{% endblock %}
+
+
+<!--{% load widget_tweaks %}-->
+{% load render_table from django_tables2 %}
+{% block content %}
+  <form method="get">
+    <div class="well">
+      <h4 style="margin-top: 0">Filter</h4>
+      <div class="row">
+        <div class="form-group col-sm-4 col-md-4">
+          {{ filter.form.name.label_tag }}
+          {% render_field filter.form.name class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-4">
+          {{ filter.form.team_information__type.label_tag }}
+          {% render_field filter.form.team_information__type class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-4">
+          {{ filter.form.team_information__manager.label_tag }}
+          {% render_field filter.form.team_information__manager class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-4">
+          {{ filter.form.team_information_time_gt.label_tag }}
+          {% render_field filter.form.team_information_time_gt class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-4">
+          {{ filter.form.team_information_time_lt.label_tag }}
+          {% render_field filter.form.team_information_time_lt class="form-control" %}
+        </div>
+
+        
+        </div>
+      
+      <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+      <input class="btn btn-primary" type="button" value="New" onclick="location.href='{% url 'create_team_information' %}'  " />
+    </div>
+
+
+
+  </form>
+
+    {% render_table table %}
+<!--<script type="text/javascript">
+    (function () {
+      $(document).ready(function(){
+        $('#id_team_information_time_gt').datetimepicker({"format": "%Y-%m-%d %H:%M", "icons": {"time": "fa fa-clock-o"}, "userCurrent": true, "collapse": false});
+      });
+    });
+</script>-->
+
+{% endblock %}
+

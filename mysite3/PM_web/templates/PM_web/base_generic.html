@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block title %}<title>项目管理系统</title>{% endblock %}
+  <!-- Bootstrap CSS -->
+ <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+     {% load static %}
+     <link rel= "stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <script src="{% static 'js/jquery-3.4.1.min.js' %}"> </script>
+     <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+    {% load static %}
+    <link rel= "stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    {% load static %}
+    <script src="{% static 'js/index.js' %}"> </script>
+    <script> 
+      $(document).ready(function(){
+        $("button").click(function(){
+          $("p").hide();
+         });
+        });
+     </script>
+  </head>
+  <body>
+  <nav id="bar">
+  
+  <div class="fixed">
+<h1><a href="#!">项目管理系统</a></h1>
+</div>
+  <ul class="nav-list">
+    <li>
+      <a id="demo" href="#!">项目管理</a>
+      <ul id="nav-dropdown1">
+        <li><a class="jump-out" href="#!">项目管理</a></li>
+        <li><a class="jump-out" href="#!">需求管理</a></li>
+       
+      </ul>
+    </li>
+     <li>
+      <a id="d-sibling2" href="#!">配置管理</a>
+      <ul id="nav-dropdown2">
+        <li><a class="jump-out" href="#!">用户管理</a></li>
+        <li><a class="jump-out" href="#!">团队管理</a></li>
+        <li><a class="jump-out" href="#!">驻地管理</a></li>
+        <li><a class="jump-out" href="#!">运营商管理</a></li>
+        <li><a class="jump-out" href="#!">分类管理</a></li>
+        <li><a class="jump-out" href="#!">状态管理</a></li>
+      </ul>
+    </li>
+    
+    
+  
+  </ul>
+</nav>
+<div id="content" style="margin-left:25%;padding:1px 16px;height:100%;">
+  
+<div id="menu">
+  <h2 >Menu</h2>
+  </div>
+  <div class="container">
+  <p>.breadcrumb 和 .breadcrumb-item 类用于设置面包屑导航：</p>                  
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Photos</a></li>
+    <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+    <li class="breadcrumb-item"><a href="#">Italy</a></li>
+    <li class="breadcrumb-item active">Rome</li>
+  </ul>
+</div>
+{% block content %}
+  <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
+  <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
+  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <button>Click me </button>
+{% endblock %}
+</div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
